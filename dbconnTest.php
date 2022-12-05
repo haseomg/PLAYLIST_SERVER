@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect("localhost", "root", "0908", "pinni_api");
+$conn = mysqli_connect("localhost", "haseomg", "0908", "pinni_api");
 
 if ($conn) {
     echo "Succeed";

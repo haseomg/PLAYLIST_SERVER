@@ -14,6 +14,7 @@ mysqli_set_charset($conn, "utf8");
 
 // connect to MySQL
 if ($conn) {
+    echo $db," 연결 성공 🐳";
     // echo "[Mysql 연결 성공] ";
 } else if (!$conn) {
     // die("Connection failed : " .$conn->connect_error);

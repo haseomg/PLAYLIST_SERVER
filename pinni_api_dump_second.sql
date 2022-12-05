@@ -74,7 +74,7 @@ CREATE TABLE `user` (
   `pwCheck` varchar(20) NOT NULL,
   `nickname` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
