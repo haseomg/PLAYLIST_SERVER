@@ -6,8 +6,9 @@
     // $password = "0908";
     // $db = "pinni_api";
 
-    $result = mysqli_query
-    ($conn, "INSERT INTO user(id, pw, pwCheck, nickname) VALUES ('$_POST[id]','$_POST[pw]','$_POST[pwCheck]','$_POST[nickname]')");
+    $result = mysqli_query($conn, 
+    "INSERT INTO user(id, pw, pwCheck, nickname) 
+    VALUES ('$_POST[id]','$_POST[pw]','$_POST[pwCheck]','$_POST[nickname]')");
     // mysqli_close($conn);
     
     if($result) {
