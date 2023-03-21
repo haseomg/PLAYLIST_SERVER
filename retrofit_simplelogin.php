@@ -17,12 +17,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     }
     else
     {
-        $query= "SELECT * FROM user WHERE id='$id' AND pw='$pw'";
+        $query= "SELECT * FROM retrofit_user WHERE id='$id' AND pw='$pw'";
         $result= mysqli_query($conn, $query);
         
         if(mysqli_num_rows($result) > 0)
         {  
-            $query= "SELECT * FROM user WHERE id='$id' AND pw='$pw'";
+            $query= "SELECT * FROM retrofit_user WHERE id='$id' AND pw='$pw'";
             $result= mysqli_query($conn, $query);
             $emparray = array();
             if(mysqli_num_rows($result) > 0)
@@ -35,8 +35,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             echo json_encode(
                 array(
                     "status" => "true",
-                    "message" => "로그인 성공",
-                    "data" => $emparray
+                    // "message" => "로그인 성공",
+                    // "data" => $emparray
                 )
             );
             }
