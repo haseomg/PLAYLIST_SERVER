@@ -12,6 +12,7 @@
     // mysqli_close($conn);
     
     $id = $_POST['id'];
+    $nickname = $_POST['nickname'];
 
     if($result) {
         // 성공
