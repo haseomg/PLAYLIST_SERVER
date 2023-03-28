@@ -17,6 +17,10 @@ $match = mysqli_fetch_array($result);
 if($match == 0) {
     echo 1;
 } else {
+    echo $match['num'];
+    echo "$$$";
+    echo $match['artist'];
+    echo "###";
     echo $match['path'];
     echo "/";
     echo $match['name'];
