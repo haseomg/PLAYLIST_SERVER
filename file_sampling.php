@@ -7,7 +7,7 @@ $num = $_POST['num'];
 // echo $num;
 
 // music 테이블에서 num에 맞는 path를 조회
-$sql = "SELECT * FROM music WHERE num='$num'";
+$sql = "SELECT * FROM music WHERE num = '$num'";
 
 $result = mysqli_query($conn, $sql);
 
@@ -18,7 +18,7 @@ if($match == 0) {
     echo 1;
 } else {
     echo $match['num'];
-    echo "$$$";
+    echo "___";
     echo $match['artist'];
     echo "###";
     echo $match['path'];
