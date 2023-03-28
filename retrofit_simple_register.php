@@ -15,11 +15,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             "message" => "필수 인자가 부족합니다")
         );
     } else {
+
+
+        
         $query = "SELECT * FROM retrofit_user WHERE id = '$id'";
         $result= mysqli_query($conn, $query);
 
         if(mysqli_num_rows($result) > 0){  
         echo json_encode(array( "status" => "false","message" => "이미 존재하는 아이디입니다") );
+
+
+
+
         } else { 
             $query = "INSERT INTO retrofit_user (id,pw,pw,pwCheck) VALUES ('$id','$pw','$pwCheck','$nickname')";
             if(mysqli_query($conn,$query))
