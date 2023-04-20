@@ -2,13 +2,14 @@
 include "dbcon.php";
 
 // 배열의 크기가 적을 때 유용
-$temp = range(1, 8);
+$temp = range(0, 9);
 shuffle($temp);
 
-$data = array_slice($temp, 0, 8);
+$data = array_slice($temp, 0, 10);
 $numbers_toString = implode('', $data);
 // echo "〰️ Random Numbers : ";
 echo $numbers_toString;
+
 // echo "<br>";
 // echo "<br>";
 // echo $numbers_toString;

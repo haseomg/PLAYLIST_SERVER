@@ -5,16 +5,26 @@ include "dbcon.php";
 $id = $_POST['id'];
 $nickname = $_POST['nickname'];
 
-$sql = "UPDATE user SET nickname = '$nickname' WHERE id = $id";
+$sql = "UPDATE user SET nickname = '$nickname' WHERE id = '$id'";
+
 $result = mysqli_query($conn, $sql);
 
-if ($result) {
-    echo $id, $nickname;
+$match = mysqli_fetch_array($result);
+
+// if ($result) {
+//     echo $id, $nickname;
+// } else {
+//     echo 'failed';
+// }
+
+// $conn -> close();
+
+if ($match == 0) {
+    echo 1;
 } else {
-    echo 'failed';
+    echo $match['id'];
+    echo $match['nickname'];
 }
-
-$conn -> close();
-
+// $conn -> close();
 ?>
 
