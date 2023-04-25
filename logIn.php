@@ -1,11 +1,6 @@
 <?php
     include "dbcon.php";
 
-    // $host = "localhost";
-    // $user = "haseomg";
-    // $password = "0908";
-    // $db = "pinni_api";
-
 $conn = mysqli_connect($host, $user, $password, $db);
 
     //넘어온 폼 데이터 id, pw
@@ -18,6 +13,7 @@ $conn = mysqli_connect($host, $user, $password, $db);
     $member = mysqli_fetch_array($result);
     mysqli_query("set names utf8", $conn);
     // print_r($member);
+    
     
     // 아이디와 비밀번호가 일치하지 않으면 실패
 	if ($member == 0) {
