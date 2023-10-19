@@ -2,13 +2,14 @@
 include "dbcon.php";
 
 // 배열의 크기가 적을 때 유용
-$temp = range(0, 9);
+
+$temp = range(1, 9);
 shuffle($temp);
 
-$data = array_slice($temp, 0, 10);
+$data = array_slice($temp, 1, 9);
 $numbers_toString = implode('', $data);
-// echo "〰️ Random Numbers : ";
 echo $numbers_toString;
+// echo 8; // 댓글 제일 많은 노래 / 16 - Wasteland
 
 // echo "<br>";
 // echo "<br>";
