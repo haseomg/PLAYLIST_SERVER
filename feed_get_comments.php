@@ -24,12 +24,12 @@ if ($conn->connect_error) {
     // $stmt = $conn->prepare($sql);
     $result = $conn->query($sql);
 
-    $comments = array();
+    $feedComments = array();
 
     if ($result->num_rows > 0) {
 
         while ($row = $result->fetch_assoc()) {
-            $comments[] = array(
+            $feedComments[] = array(
                 'user' => $row["user"],
                 'song' => $row["song"],
                 'selected_time' => $row["selected_time"],
@@ -38,7 +38,7 @@ if ($conn->connect_error) {
         } // while
 
         // 결과를 JSON 형태로 인코딩하여 출력
-        echo json_encode($comments);
+        echo json_encode($feedComments);
     } else {
         echo json_encode(array());
     } // elser
