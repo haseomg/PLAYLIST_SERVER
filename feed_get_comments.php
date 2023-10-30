@@ -26,15 +26,6 @@ if ($conn->connect_error) {
 
     $comments = array();
 
-    // 아랫 줄 에러 발생
-    // if (!$stmt) {
-    //     die("Error preparing statement: " . $conn->error);
-    // }
-    // $stmt->bind_param("ss", $song_name, $selected_time);
-    // $stmt->execute();
-    // $result = $stmt->get_result();
-
-
     if ($result->num_rows > 0) {
 
         while ($row = $result->fetch_assoc()) {
