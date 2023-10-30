@@ -20,7 +20,6 @@ if ($conn->connect_error) {
     $sql = "SELECT song, selected_time, msg 
     FROM comment WHERE user = '$user'";
 
-
     // $stmt = $conn->prepare($sql);
     $result = $conn->query($sql);
 
