@@ -19,26 +19,33 @@ if ($conn->connect_error) {
 // else {
 
 // played_list 테이블에서 유저가 어떤 곡을 들었는지 체크
-$sql = "SELECT pl.*
-FROM played_list pl
-JOIN (
-    SELECT playedSongs, MAX(updateDate) as MaxDate
-    FROM played_list 
-    GROUP BY playedSongs
-) pl2 ON pl.playedSongs = pl2.playedSongs AND pl.updateDate = pl2.MaxDate
-ORDER BY pl.updateDate ASC;";
+// $sql = "SELECT pl.*
+// FROM played_list pl
+// JOIN (
+//     SELECT playedSongs, MAX(updateDate) as MaxDate
+//     FROM played_list 
+//     GROUP BY playedSongs
+// ) pl2 ON pl.playedSongs = pl2.playedSongs AND pl.updateDate = pl2.MaxDate
+// ORDER BY pl.updateDate ASC;";
 // 위의 쿼리문 너무 헤비해.. 느려..
 
 
 // $result = $conn->query($sql);
-$result = $conn->query("SELECT pl.*
+$stmt = $conn->prepare("SELECT pl.*
 FROM played_list pl
 JOIN (
     SELECT playedSongs, MAX(updateDate) as MaxDate
-    FROM played_list 
+    FROM played_list
+    WHERE userName = ?
     GROUP BY playedSongs
 ) pl2 ON pl.playedSongs = pl2.playedSongs AND pl.updateDate = pl2.MaxDate
+WHERE pl.userName = ?
 ORDER BY pl.updateDate ASC;");
+
+$stmt->bind_param("ss", $user_name, $user_name);
+$stmt->execute();
+
+$result = $stmt->get_result();
 $played = array();
 
 if ($result->num_rows > 0) {
