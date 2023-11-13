@@ -36,7 +36,6 @@ if ($conn->connect_error) {
        } else {
         echo json_encode(array());
    	} // else
-    
     } // connection
 $conn -> close();
 ?>
