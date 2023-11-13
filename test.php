@@ -1,4 +1,4 @@
-<?php   
+<!-- <?php   
     $param = $_POST[param];
     $param2 = $_POST[param2];
 
@@ -7,4 +7,4 @@
     
     $result = '결과 값은 "'.(intval($param) + intval($param2)).'" 입니다.';
     echo $result;
-?>
+?> -->
